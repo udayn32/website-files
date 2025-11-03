@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Starter Page</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<h1 id="title">Hello — Starter Page</h1>
+		</header>
+
+		<main>
+			<p id="intro">This page demonstrates a small JS DOM example and console.log.</p>
+			<button id="addBtn">Add item</button>
+			<ul id="items"></ul>
+		</main>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				console.log('DOM loaded — ready to go.');
+
+				const title = document.getElementById('title');
+				title.textContent = 'Hello — DOM updated';
+
+				const btn = document.getElementById('addBtn');
+				const items = document.getElementById('items');
+				let count = 0;
+
+				btn.addEventListener('click', () => {
+					count += 1;
+					const li = document.createElement('li');
+					li.textContent = `Item ${count}`;
+					items.appendChild(li);
+					console.log('Added', li.textContent);
+				});
+			});
+		</script>
+	</body>
+</html>
+
