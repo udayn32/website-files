@@ -1,10 +1,14 @@
 FROM nginx:latest
 
-# Clear the default nginx html folder
-RUN rm -rf /usr/share/nginx/html/*
+# Set working directory
+WORKDIR /usr/share/nginx/html
 
-# Copy your website files to nginx web directory
-COPY index.html /usr/share/nginx/html/
-COPY styles.css /usr/share/nginx/html/
+# Remove default nginx website
+RUN rm -rf ./*
 
+# Copy your site files
+COPY index.html .
+COPY styles.css .
+
+# Expose port 80
 EXPOSE 80
