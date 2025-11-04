@@ -7,8 +7,9 @@
     <groupId>com.uday.website</groupId>
     <artifactId>website-files</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
-<dependencies>
+    <packaging>jar</packaging>
+
+    <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -19,14 +20,10 @@
 
     <build>
         <plugins>
-            <!-- Allows the build to succeed even if there is no Java code -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-               <configuration>
-                    <skipTests>false</skipTests>
-               </configuration>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
             </plugin>
         </plugins>
     </build>
